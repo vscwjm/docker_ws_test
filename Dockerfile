@@ -9,6 +9,6 @@ RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config
 RUN echo root:uncleluo | chpasswd
 RUN useradd wjm
 RUN echo wjm:wjmwjmwjm | chpasswd
-RUN chmod 755 /1.sh
+RUN chmod 7777 /1.sh
 EXPOSE 80
 CMD  /1.sh
