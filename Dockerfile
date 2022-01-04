@@ -7,7 +7,7 @@ RUN echo 'wstunnel -s 0.0.0.0:80 &' >>/1.sh
 RUN echo '/usr/sbin/sshd -D' >>/1.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:uncleluo | chpasswd
-RUN user add wjm
+RUN useradd wjm
 RUN echo wjm:wjmwjmwjm | chpasswd
 RUN chmod 755 /1.sh
 EXPOSE 80
