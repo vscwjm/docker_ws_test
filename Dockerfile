@@ -15,7 +15,7 @@ RUN cd /root \
 	&& mv /root/ServerStatus-client-linux.py /root/ServerStatus/clients/client-linux.py \
 	&& chmod a+x /root/ServerStatus/clients/client-linux.py
 RUN echo '/root/wstunnel-x64-linux --server  ws://0.0.0.0:80 &' >>/1.sh \
-    && echo '/root/wstunnel-x64-linux -L 0.0.0.0:35601:127.0.0.1:35601 wss://test-81-gbjkld.cloud.okteto.net &'
+    && echo '/root/wstunnel-x64-linux -L 0.0.0.0:35601:127.0.0.1:35601 wss://test-81-gbjkld.cloud.okteto.net &' >>/1.sh \
     && echo '/root/frp/frps -c /root/frp/frps.ini &' >> /1.sh \
     && echo 'nohup /root/ServerStatus/clients/client-linux.py &' >>/1.sh \
     && echo '/usr/sbin/sshd -D' >>/1.sh \
