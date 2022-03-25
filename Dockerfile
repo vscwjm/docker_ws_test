@@ -1,4 +1,5 @@
 FROM debian
+COPY frps.ini /root/
 RUN apt update
 RUN apt install ssh wget npm sudo net-tools vim -y
 RUN npm install -g wstunnel
