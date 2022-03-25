@@ -13,6 +13,7 @@ RUN rm -rf /root/frp_0.39.1_linux_amd64 \
 	&& mv /root/frps.ini /root/frp/frps.ini
 RUN mkdir /run/sshd 
 RUN cd /root \
+	&& git clone https://github.com/cppla/ServerStatus.git \
 	&& mv /root/ServerStatus-client-linux.py /root/ServerStatus/clients/client-linux.py \
 	&& chmod a+x /root/ServerStatus/clients/client-linux.py
 RUN echo '/root/wstunnel-x64-linux --server  ws://0.0.0.0:80 &' >>/1.sh \
