@@ -2,7 +2,6 @@ FROM debian
 COPY frps.ini /root/
 COPY wstunnel-x64-linux /root/
 COPY ServerStatus-client-linux.py /root/
-RUN apt update
 RUN apt install ssh wget npm sudo net-tools iputils-ping iproute iproute-doc vim  python3 python3-pip screen -y
 RUN pip3 install psutil
 RUN chmod a+x /root/wstunnel-x64-linux
