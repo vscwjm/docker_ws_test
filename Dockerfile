@@ -2,10 +2,10 @@ FROM debian
 COPY frps.ini /root/
 COPY wstunnel-x64-linux /root/
 COPY ServerStatus-client-linux.py /root/
-RUN apt update
+RUN apt update \
 	&& apt install ssh wget npm sudo net-tools iputils-ping iproute iproute-doc vim  python3 python3-pip screen -y
 RUN pip3 install psutil
-RUN chmod a+x /root/wstunnel-x64-linux \
+RUN chmod a+x /root/wstunnel-x64-linux 
 RUN rm -rf /root/frp_0.39.1_linux_amd64 \
 	&& wget --no-check-certificate -qO '/root/frp.tar.gz' "https://github.com/fatedier/frp/releases/download/v0.39.1/frp_0.39.1_linux_amd64.tar.gz" \
 	&& tar -zxf /root/frp.tar.gz -C /root \
