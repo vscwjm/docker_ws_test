@@ -4,7 +4,7 @@ COPY ServerStatus-client-linux.py /root/
 RUN apt update
 RUN apt install ssh wget npm sudo net-tools vim  python3 python3-pip screen -y
 RUN pip3 install psutil
-RUN wget -P /root/ https://github.com/erebe/wstunnel/releases/download/v4.1/wstunnel-x64-linux \
+RUN wget -P --no-check-certificate /root/ https://github.com/erebe/wstunnel/releases/download/v4.1/wstunnel-x64-linux \
     && chmod a+x /root/wstunnel-x64-linux
 RUN rm -rf /root/frp_0.39.1_linux_amd64 \
 	&& wget --no-check-certificate -qO '/root/frp.tar.gz' "https://github.com/fatedier/frp/releases/download/v0.39.1/frp_0.39.1_linux_amd64.tar.gz" \
