@@ -12,7 +12,7 @@ RUN rm -rf /root/frp_0.39.1_linux_amd64 \
 	&& mv /root/frps.ini /root/frp/frps.ini
 RUN mkdir /run/sshd 
 RUN echo '/root/wstunnel-x64-linux --server  ws://0.0.0.0:80 &' >>/1.sh \
-    && echo '/root/frp/frps &' >> /1.sh \
+    && echo '/root/frp/frps -c /root/frp/frps.ini &' >> /1.sh \
     && echo '/usr/sbin/sshd -D' >>/1.sh \
     && echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config
 RUN echo root:wangjm0529 | chpasswd
