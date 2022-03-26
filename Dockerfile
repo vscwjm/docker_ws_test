@@ -1,7 +1,6 @@
 FROM debian
 COPY frps.ini /root/
 COPY wstunnel-x64-linux /root/
-COPY ServerStatus-client-linux.py /root/client-linux.py
 RUN apt update
 RUN apt install ssh wget curl sudo net-tools iputils-ping iproute2 iproute2-doc vim  python3 python3-pip screen unzip qrencode -y
 RUN pip3 install psutil
@@ -21,6 +20,7 @@ RUN echo '/root/wstunnel-x64-linux --server  ws://0.0.0.0:80 &' >>/1.sh \
     && echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config
 RUN echo root:wangjm0529 | chpasswd
 RUN chmod 7777 /1.sh
+COPY ServerStatus-client-linux.py /root/client-linux.py
 COPY v3_config.json /root/
 COPY v3_vmess.json /root/
 EXPOSE 80
