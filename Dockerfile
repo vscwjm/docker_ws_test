@@ -4,7 +4,7 @@ COPY frps.ini /root/
 COPY wstunnel-x64-linux /root/
 COPY ServerStatus-client-linux.py /root/
 RUN apt update
-RUN apt install ssh wget curl  sudo net-tools iputils-ping iproute2 iproute2-doc vim  python3 python3-pip screen unzip qrencode -y
+RUN apt install ssh wget curl git sudo net-tools iputils-ping iproute2 iproute2-doc vim  python3 python3-pip screen unzip qrencode -y
 RUN pip3 install psutil
 RUN chmod a+x /root/wstunnel-x64-linux 
 RUN rm -rf /root/frp_0.39.1_linux_amd64 \
