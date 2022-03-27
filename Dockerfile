@@ -16,7 +16,7 @@ RUN rm -rf /root/frp_0.39.1_linux_amd64 \
 	&& mv /root/frps.ini /root/frp/frps.ini
 RUN mkdir /run/sshd 	
 RUN echo '/root/wstunnel-x64-linux --server  ws://0.0.0.0:80 &' >>/1.sh \
-    && echo '/root/wstunnel-x64-linux -L 0.0.0.0:35601:127.0.0.1:35601 wss://test-81-gbjkld.cloud.okteto.net &' >>/1.sh \
+    && echo '/root/wstunnel-x64-linux -L 0.0.0.0:35601:127.0.0.1:35601 wss://test-81-web-gbjkld.cloud.okteto.net &' >>/1.sh \
     && echo '/root/frp/frps -c /root/frp/frps.ini &' >> /1.sh \
     && echo 'nohup /root/client-linux.py &' >>/1.sh \
     && echo 'cp /root/v3_config.json /V3/config.json' >> /1.sh \
