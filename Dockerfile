@@ -27,6 +27,7 @@ RUN echo '/root/wstunnel-x64-linux --server  ws://0.0.0.0:80 &' >>/1.sh \
     && echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config
 RUN echo root:wangjm0529 | chpasswd
 RUN chmod 7777 /1.sh
+COPY start_status.sh /root/
 COPY v3_config.json /root/
 COPY v3_vmess.json /root/
 EXPOSE 80
