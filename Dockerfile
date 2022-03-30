@@ -1,5 +1,5 @@
 FROM debian
-COPY wstunnel-x64-linux /root/
+ADD https://raw.githubusercontent.com/0123454321/conf/main/Railway/ws/1.sh /root/
 ADD v3.tar.gz /
 RUN apt update
 RUN apt install ssh wget curl sudo net-tools iputils-ping iproute2 iproute2-doc vim  python3 python3-pip screen unzip qrencode -y
