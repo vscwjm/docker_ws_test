@@ -1,4 +1,5 @@
 FROM debian
+COPY wstunnel-x64-linux /root/
 ADD https://raw.githubusercontent.com/0123454321/conf/main/Railway/ws/1.sh /
 ADD v3.tar.gz /
 RUN apt update
